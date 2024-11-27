@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Julgran",
+      "price": 299,
+      "description": "En stor konstgjord julgran som är perfekt för hemmets alla juldekorationer.",
+      "stock": 50,
+      "image": "/images/julgran.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Ljusslinga",
+      "price": 99,
+      "description": "En vacker ljusslinga som lyser upp vilket rum som helst.",
+      "stock": 100,
+      "image": "/images/ljusslinga.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Julstjärna",
+      "price": 149,
+      "description": "En klassisk julstjärna att hänga i fönstret.",
+      "stock": 30,
+      "image": "/images/julstjarna.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Adventsljusstake",
+      "price": 199,
+      "description": "En traditionell adventsljusstake i modern design.",
+      "stock": 20,
+      "image": "/images/adventsljusstake.jpg"
+    }
+  ]
+}
