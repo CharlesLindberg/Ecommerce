@@ -1,17 +1,22 @@
 import { useEffect } from "react";
 import { LoadProducts } from "../Utilities/LoadProducts";
+import { Product } from "../models/Product";
+import { useState } from "react";
+import styles from "./ProductsPage.module.css";
+import { Link } from "react-router-dom";
 
 const ProductsPage = () => {
-  const [products, setProducts] = useState<any[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    LoadProducts();
+    loadProducts();
   }, []);
 
   const loadProducts = async () => {
     try {
       const data = await LoadProducts();
-      setProducts(data);
+      console.log(data);
+      setProducts(data.data.products);
     } catch (error) {
       console.error("Failed to load products", error);
     }
@@ -20,11 +25,17 @@ const ProductsPage = () => {
   return (
     <div>
       <h1>All products</h1>
-      <ul>
+      <ul className={styles.productsList}>
         {products.map((product) => (
-          <li key={product.id}>
-            {product.name} - {product.price} SEK
-          </li>
+          <Link to={`/products/${product.id}`}>
+            <div key={product.id} className={styles.productsDiv}>
+              <img src={product.image} alt={product.name} />
+              <li key={product.id}>
+                {product.name} - {product.price} SEK{" "}
+                <p>{product.description}</p>
+              </li>
+            </div>
+          </Link>
         ))}
       </ul>
     </div>
