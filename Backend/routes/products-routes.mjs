@@ -1,8 +1,8 @@
-import express from "express";
 import {
   listProducts,
   findProduct,
-} from "./controllers/products-controller.mjs";
+} from "../controllers/products-controller.mjs";
+import express from "express";
 
 const router = express.Router();
 

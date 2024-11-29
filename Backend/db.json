@@ -6,7 +6,7 @@
       "price": 299,
       "description": "En stor konstgjord julgran som är perfekt för hemmets alla juldekorationer.",
       "stock": 50,
-      "image": "/images/julgran.jpg"
+      "image": "/images/julgran.webp"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "price": 99,
       "description": "En vacker ljusslinga som lyser upp vilket rum som helst.",
       "stock": 100,
-      "image": "/images/ljusslinga.jpg"
+      "image": "/images/ljusslinga.webp"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "price": 149,
       "description": "En klassisk julstjärna att hänga i fönstret.",
       "stock": 30,
-      "image": "/images/julstjarna.jpg"
+      "image": "/images/julstjarna.webp"
     },
     {
       "id": 4,
@@ -30,7 +30,135 @@
       "price": 199,
       "description": "En traditionell adventsljusstake i modern design.",
       "stock": 20,
-      "image": "/images/adventsljusstake.jpg"
+      "image": "/images/adventsljusstake.webp"
+    },
+    {
+      "id": 5,
+      "name": "Julpynt",
+      "price": 79,
+      "description": "Ett set med julpynt för att dekorera ditt hem.",
+      "stock": 200,
+      "image": "/images/julpynt.webp"
+    },
+    {
+      "id": 6,
+      "name": "Julkula",
+      "price": 29,
+      "description": "En röd och glittrig julkula.",
+      "stock": 300,
+      "image": "/images/julkula.webp"
+    },
+    {
+      "id": 7,
+      "name": "Tomtefigur",
+      "price": 249,
+      "description": "En handgjord tomtefigur att ställa fram till jul.",
+      "stock": 40,
+      "image": "/images/tomtefigur.webp"
+    },
+    {
+      "id": 8,
+      "name": "Julduk",
+      "price": 119,
+      "description": "En röd duk med julmotiv.",
+      "stock": 60,
+      "image": "/images/julduk.webp"
+    },
+    {
+      "id": 9,
+      "name": "Julstrumpa",
+      "price": 89,
+      "description": "En klassisk julstrumpa för att fylla med godis.",
+      "stock": 120,
+      "image": "/images/julstrumpa.webp"
+    },
+    {
+      "id": 10,
+      "name": "Glöggmuggar",
+      "price": 159,
+      "description": "Fyra glöggmuggar med julmotiv.",
+      "stock": 80,
+      "image": "/images/gloggmuggar.webp"
+    },
+    {
+      "id": 11,
+      "name": "Pepparkaksformar",
+      "price": 49,
+      "description": "Ett set med olika pepparkaksformar.",
+      "stock": 150,
+      "image": "/images/pepparkaksformar.webp"
+    },
+    {
+      "id": 12,
+      "name": "Julgransfot",
+      "price": 199,
+      "description": "En stabil julgransfot i metall.",
+      "stock": 30,
+      "image": "/images/julgransfot.webp"
+    },
+    {
+      "id": 13,
+      "name": "Ljusstake",
+      "price": 299,
+      "description": "En elegant ljusstake för advent.",
+      "stock": 25,
+      "image": "/images/ljusstake.webp"
+    },
+    {
+      "id": 14,
+      "name": "Julgranstopp",
+      "price": 79,
+      "description": "En stjärna i guld att sätta högst upp i julgranen.",
+      "stock": 50,
+      "image": "/images/julgranstopp.webp"
+    },
+    {
+      "id": 15,
+      "name": "Tomteluva",
+      "price": 39,
+      "description": "En mjuk tomteluva i röd sammet.",
+      "stock": 150,
+      "image": "/images/tomteluva.webp"
+    },
+    {
+      "id": 16,
+      "name": "Snöglob",
+      "price": 249,
+      "description": "En vacker snöglob med ett julmotiv inuti.",
+      "stock": 20,
+      "image": "/images/snoglob.webp"
+    },
+    {
+      "id": 17,
+      "name": "Presentpapper",
+      "price": 59,
+      "description": "Rullar med presentpapper i olika julmotiv.",
+      "stock": 100,
+      "image": "/images/presentpapper.webp"
+    },
+    {
+      "id": 18,
+      "name": "Julbelysning",
+      "price": 299,
+      "description": "En LED-ljusslinga för utomhusbruk.",
+      "stock": 50,
+      "image": "/images/julbelysning.webp"
+    },
+    {
+      "id": 19,
+      "name": "Pepparkakor",
+      "price": 39,
+      "description": "En burk med traditionella pepparkakor.",
+      "stock": 300,
+      "image": "/images/pepparkakor.webp"
+    },
+    {
+      "id": 20,
+      "name": "Julmusik-CD",
+      "price": 99,
+      "description": "En CD med klassisk julmusik.",
+      "stock": 10,
+      "image": "/images/julmusik.webp"
     }
   ]
 }

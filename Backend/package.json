@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.mjs"
+    "dev": "nodemon server.mjs",
+    "mock-server": "json-server --watch db.json"
   },
   "keywords": [],
   "author": "",
@@ -17,8 +18,5 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
-  },
-  "scripts": {
-    "mock-server": "json-server --watch db.json"
   }
 }
