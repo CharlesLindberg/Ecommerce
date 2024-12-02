@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  justify-content: space-between; /* Logga till vänster, meny till höger */
+  align-items: center;
+  padding: 1rem 2rem; /* Lite padding för snyggare layout */
+  background-color: #f5f5f5; /* Valfri bakgrundsfärg */
+  border-bottom: 1px solid #ddd; /* Separera header från innehåll */
+}
+
+.logoContainer img {
+  max-height: 100px; /* Anpassa loggans storlek */
+  width: auto;
+  border-radius: 100%;
+}
+
+.nav {
+  display: flex; /* Gör menyn horisontell */
+  gap: 1.5rem; /* Mellanrum mellan länkarna */
+}
+
+.nav a {
+  color: #2c2c2c;
+  font-weight: 600;
+}
+
+.nav a:hover {
+  color: #4f4e4e;
+  font-weight: 600;
+  border-bottom: 2px solid #4f4e4e;
+}
+
+.navList {
+  display: flex; /* Gör listan horisontell */
+  gap: 1.5rem; /* Mellanrum mellan listobjekten */
+  list-style-type: none; /* Ta bort punkterna framför <li> */
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  text-decoration: none; /* Ta bort understrykning */
+  color: #333; /* Standardfärg */
+  font-weight: bold; /* Gör texten lite tjockare */
+  transition: color 0.3s ease; /* Lägg till lite hover-effekt */
+}
+
+.navLink:hover {
+  color: #606060; /* Färg på hover */
+}
+
+.navLink.active {
+  color: #2c2c2c; /* Färg för den aktiva länken */
+  text-decoration: underline; /* Understrykning för den aktiva länken */
+}

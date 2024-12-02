@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchData } from "../Utilities/httpClient";
-import { Product } from "../models/Product";
+import { IProductDetails } from "../models/IProductDetails";
+import styles from "./ProductPage.module.css";
 
 const ProductPage = () => {
-  const [product, setProduct] = useState<Product> | (null > null);
+  const [product, setProduct] = useState<IProductDetails>();
   const { id } = useParams();
 
   useEffect(() => {
-    const fetchProduct = async () => {
+    const getProduct = async () => {
       try {
         const fetchedProduct = await fetchData(`/products/${id}`);
         console.log(fetchedProduct);
@@ -17,20 +18,26 @@ const ProductPage = () => {
         console.error("Faile to fetch product details", error);
       }
     };
-    fetchProduct();
+    getProduct();
   }, [id]);
 
   if (!product) {
     return <p>Loading product details...</p>;
   }
 
+  console.log(product);
+
   return (
-    <div>
-      <h1>{product.name}</h1>
-      <img src={product.image} alt={product.name} />
-      <p>{product.description}</p>
-      <p>Pris: {product.price}</p>
-      <p>Lagerstatus: {product.stock}</p>
+    <div className={styles.productPage}>
+      <div className={styles.imageContainer}>
+        <h1>{product.data.name}</h1>
+        <img src={product.data.image} alt={product.name} />
+      </div>
+      <div className={styles.infoConteiner}>
+        <p>{product.data.description}</p>
+        <p>Pris: {product.data.price} SEK</p>
+        <p>Lagerstatus: {product.data.stock} /st</p>
+      </div>
     </div>
   );
 };

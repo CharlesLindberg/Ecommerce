@@ -55,8 +55,13 @@ export const listProducts = (req, res) => {
 
 export const findProduct = (req, res) => {
   const { id } = req.params; // Hämta ID från request-parametrarna
+  console.log("Request ID:", id);
+  console.log("Products:", products);
   try {
-    const product = products.find((product) => product.id === parseInt(id, 10));
+    const product = products.products.find(
+      (product) => product.id === parseInt(id, 10)
+    );
+    console.log("Found product: ", product);
     if (!product) {
       return res
         .status(404)

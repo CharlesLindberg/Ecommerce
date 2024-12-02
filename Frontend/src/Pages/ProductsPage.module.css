@@ -8,8 +8,17 @@
   padding: 0;
 }
 
+.productsList a {
+  display: inline-block;
+}
+
+a {
+  display: inline-block;
+}
+
 .productsDiv {
-  border: 1px solid black;
+  border: 1px solid green;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,6 +26,7 @@
 }
 
 .productsDiv img {
+  border: 1px solid yellow;
   max-width: 100%; /* Anpassa bilder till containern */
   height: auto;
   border-radius: 5px;
