@@ -3,10 +3,13 @@ import { useParams } from "react-router-dom";
 import { fetchData } from "../Utilities/httpClient";
 import { IProductDetails } from "../models/IProductDetails";
 import styles from "./ProductPage.module.css";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/slices/cartSlice";
 
 const ProductPage = () => {
   const [product, setProduct] = useState<IProductDetails>();
   const { id } = useParams();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -20,6 +23,19 @@ const ProductPage = () => {
     };
     getProduct();
   }, [id]);
+
+  const handleAddToCart = () => {
+    if (product) {
+      dispatch(
+        addToCart({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          quantity: 1,
+        })
+      );
+    }
+  };
 
   if (!product) {
     return <p>Loading product details...</p>;
@@ -37,6 +53,9 @@ const ProductPage = () => {
         <p>{product.data.description}</p>
         <p>Pris: {product.data.price} SEK</p>
         <p>Lagerstatus: {product.data.stock} /st</p>
+        <button onClick={handleAddToCart} className={styles.addToCartButton}>
+          Add to cart
+        </button>
       </div>
     </div>
   );
