@@ -2,12 +2,18 @@ import fs from "fs";
 import db from "../db.json" assert { type: "json" };
 import path from "path";
 
-const dbPath = path.resolve("./Backend/db.json");
+console.log("Current working directory:", process.cwd());
+
+// const dbPath = "./Backend/db.json";
+const dbPath = path.resolve("db.json");
 
 // Funktion för att uppdatera db.json
 const writeDb = (data) => {
   try {
+    console.log("Attempting to write to db.json at:", dbPath);
+    console.log("Data being written:", JSON.stringify(data, null, 2));
     fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
+    console.log("db.json successfully updated!");
   } catch (error) {
     console.error("Error writing to db.json:", error.message);
   }
@@ -41,6 +47,7 @@ export const addToCart = (req, res) => {
     }
 
     writeDb(db); // Uppdatera db.json
+    console.log("Updated cart:", db.cart);
 
     res.status(201).json({ success: true, message: "Item added to cart" });
   } catch (error) {

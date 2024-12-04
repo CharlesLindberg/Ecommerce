@@ -161,5 +161,14 @@
       "image": "/images/julmusik.webp"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": 20,
+      "name": "Julmusik-CD",
+      "price": 99,
+      "description": "En CD med klassisk julmusik.",
+      "image": "/images/julmusik.webp",
+      "quantity": 2
+    }
+  ]
 }
