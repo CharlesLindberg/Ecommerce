@@ -163,12 +163,12 @@
   ],
   "cart": [
     {
-      "id": 20,
-      "name": "Julmusik-CD",
-      "price": 99,
-      "description": "En CD med klassisk julmusik.",
-      "image": "/images/julmusik.webp",
-      "quantity": 1
+      "id": 19,
+      "name": "Pepparkakor",
+      "price": 39,
+      "description": "En burk med traditionella pepparkakor.",
+      "image": "/images/pepparkakor.webp",
+      "quantity": 2
     }
   ]
 }

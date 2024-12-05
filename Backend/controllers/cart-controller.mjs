@@ -33,7 +33,7 @@ export const listCartItems = (req, res) => {
 
 // Lägg till en vara i kundkorgen
 
-export const addToCart = (req, res) => {
+export const addItemToCart = (req, res) => {
   const { id, name, price, description, image } = req.body;
 
   try {
@@ -60,7 +60,7 @@ export const addToCart = (req, res) => {
 
 // Funktion för att radera från kundkorg
 
-export const removeFromCart = (req, res) => {
+export const removeItemFromCart = (req, res) => {
   const { id } = req.params;
 
   try {

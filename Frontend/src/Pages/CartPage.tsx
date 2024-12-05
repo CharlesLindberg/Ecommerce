@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { RootState } from "../redux/store";
 import { removeFromCart, addToCart } from "../redux/slices/cartSlice";
+import { removeFromCartAPI } from "../Utilities/LoadCart";
 import { loadCartItems } from "../Utilities/LoadCart";
 
 const CartPage = () => {
@@ -31,7 +32,7 @@ const CartPage = () => {
     console.log("Removing item with id:", id);
 
     try {
-      await removeFromCart(id); // delete req till backend
+      await removeFromCartAPI(id); // delete req till backend
       console.log("Removing item with id from Redux", id);
       dispatch(removeFromCart(id)); //Uppdatera redux store
     } catch (error) {

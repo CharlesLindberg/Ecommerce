@@ -5,6 +5,7 @@ import { IProductDetails } from "../models/IProductDetails";
 import styles from "./ProductPage.module.css";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/slices/cartSlice";
+import { addToCartAPI } from "../Utilities/LoadCart";
 
 const ProductPage = () => {
   const [product, setProduct] = useState<IProductDetails>();
@@ -26,8 +27,6 @@ const ProductPage = () => {
 
   const handleAddToCart = async () => {
     if (product) {
-      console.log("Adding product to cart:", product);
-
       const cartItem = {
         id: product.id,
         name: product.name,
@@ -39,12 +38,11 @@ const ProductPage = () => {
       };
 
       try {
-        console.log("About to send POST request to backend with:", cartItem);
+        await addToCartAPI(cartItem); // POST-req till backend
+        console.log("Product successfully added to backend!");
 
-        await addToCart(cartItem); // POST-req till backend
-
-        dispatch(addToCart(cartItem)); // Skicka till redux store
-        console.log("Product successfully added to Redux Store.");
+        dispatch(addToCart(cartItem)); // Dispatcha Redux-action
+        console.log("Product added to Redux Store:", cartItem);
       } catch (error) {
         console.error("Failed to add product to cart", error);
       }

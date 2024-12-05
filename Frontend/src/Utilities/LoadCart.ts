@@ -14,12 +14,14 @@ export const loadCartItems = async (): Promise<ICartItem[]> => {
 };
 
 // Lägg till en vara i kundkorgen
-export const addToCart = async (item: ICartItem): Promise<void> => {
+export const addToCartAPI = async (item: ICartItem): Promise<void> => {
+  console.log("Attempting POST request to /cart with:", item);
   try {
     const endpoint = "/cart";
     console.log("Sending POST request to:", endpoint, "with item:", item);
 
-    console.log("Sending POST request to backend at /cart with data:", item);
+    console.log("Attempting POST request to /cart with:", item);
+
     const response = await fetchData(endpoint, {
       method: "POST",
       headers: { "Content-type": "application/json" },
@@ -34,7 +36,7 @@ export const addToCart = async (item: ICartItem): Promise<void> => {
 };
 
 // Ta bort en vara från cart
-export const removeFromCart = async (id: number): Promise<void> => {
+export const removeFromCartAPI = async (id: number): Promise<void> => {
   try {
     const endpoint = `/cart/${id}`;
     console.log("Attempting to DELETE item with id:", id);
