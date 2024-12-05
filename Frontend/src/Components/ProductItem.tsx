@@ -3,7 +3,7 @@ import styles from "./ProductItem.module.css";
 
 const ProductItem = ({ product }: { product: IProduct }) => {
   return (
-    <div className={styles.productItem}>
+    <div className={styles.productItem} data-testid="prod-card">
       <img src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
       <p>{product.price} SEK</p>

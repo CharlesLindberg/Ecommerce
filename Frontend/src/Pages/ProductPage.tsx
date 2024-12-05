@@ -16,7 +16,7 @@ const ProductPage = () => {
       try {
         const fetchedProduct = await fetchData(`/products/${id}`);
         console.log(fetchedProduct);
-        setProduct(fetchedProduct);
+        setProduct(fetchedProduct.data);
       } catch (error) {
         console.error("Faile to fetch product details", error);
       }
@@ -24,16 +24,30 @@ const ProductPage = () => {
     getProduct();
   }, [id]);
 
-  const handleAddToCart = () => {
+  const handleAddToCart = async () => {
     if (product) {
-      dispatch(
-        addToCart({
-          id: product.id,
-          name: product.name,
-          price: product.price,
-          quantity: 1,
-        })
-      );
+      console.log("Adding product to cart:", product);
+
+      const cartItem = {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        description: product.description,
+        image: product.image,
+        stock: product.stock,
+        quantity: 1,
+      };
+
+      try {
+        console.log("About to send POST request to backend with:", cartItem);
+
+        await addToCart(cartItem); // POST-req till backend
+
+        dispatch(addToCart(cartItem)); // Skicka till redux store
+        console.log("Product successfully added to Redux Store.");
+      } catch (error) {
+        console.error("Failed to add product to cart", error);
+      }
     }
   };
 
@@ -46,13 +60,13 @@ const ProductPage = () => {
   return (
     <div className={styles.productPage}>
       <div className={styles.imageContainer}>
-        <h1>{product.data.name}</h1>
-        <img src={product.data.image} alt={product.name} />
+        <h1>{product.name}</h1>
+        <img src={product.image} alt={product.name} />
       </div>
       <div className={styles.infoConteiner}>
-        <p>{product.data.description}</p>
-        <p>Pris: {product.data.price} SEK</p>
-        <p>Lagerstatus: {product.data.stock} /st</p>
+        <p>{product.description}</p>
+        <p>Pris: {product.price} SEK</p>
+        <p>Lagerstatus: {product.stock} /st</p>
         <button onClick={handleAddToCart} className={styles.addToCartButton}>
           Add to cart
         </button>

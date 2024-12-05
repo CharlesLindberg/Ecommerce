@@ -6,14 +6,18 @@ import { loadCartItems } from "../Utilities/LoadCart";
 
 const CartPage = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
+
+  console.log("Cart items from Redux Store:", cartItems);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
         const items = await loadCartItems();
-        console.log(items);
-        items.data.forEach((item) => {
+        console.log("Items fetched from API:", items); // Kontrollera backend-data här
+
+        items.forEach((item) => {
           dispatch(addToCart(item)); // Lägg till varje objekt i redux store
         });
       } catch (error) {
@@ -23,11 +27,17 @@ const CartPage = () => {
     fetchCartItems();
   }, [dispatch]);
 
-  const handleRemove = (id: number) => {
-    dispatch(removeFromCart(id));
-  };
+  const handleRemove = async (id: number) => {
+    console.log("Removing item with id:", id);
 
-  console.log(cartItems);
+    try {
+      await removeFromCart(id); // delete req till backend
+      console.log("Removing item with id from Redux", id);
+      dispatch(removeFromCart(id)); //Uppdatera redux store
+    } catch (error) {
+      console.error("Failed to remove item from cart", error);
+    }
+  };
 
   return (
     <div>

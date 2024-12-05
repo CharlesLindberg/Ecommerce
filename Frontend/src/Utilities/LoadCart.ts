@@ -17,6 +17,9 @@ export const loadCartItems = async (): Promise<ICartItem[]> => {
 export const addToCart = async (item: ICartItem): Promise<void> => {
   try {
     const endpoint = "/cart";
+    console.log("Sending POST request to:", endpoint, "with item:", item);
+
+    console.log("Sending POST request to backend at /cart with data:", item);
     const response = await fetchData(endpoint, {
       method: "POST",
       headers: { "Content-type": "application/json" },
@@ -31,11 +34,20 @@ export const addToCart = async (item: ICartItem): Promise<void> => {
 };
 
 // Ta bort en vara från cart
-export const removeFromcCart = async (id: number): Promise<void> => {
+export const removeFromCart = async (id: number): Promise<void> => {
   try {
     const endpoint = `/cart/${id}`;
+    console.log("Attempting to DELETE item with id:", id);
     const response = await fetchData(endpoint, { method: "DELETE" });
-    return response;
+
+    if (!response.ok) {
+      throw new Error(`Failed to delete item with id ${id}`);
+    }
+
+    console.log(
+      `Item with id ${id} successfully removed from backend`,
+      response
+    );
   } catch (error) {
     console.error("Error removing from cart: ", error);
   }
