@@ -26,18 +26,7 @@ const ProductsPage = () => {
   return (
     <div>
       <h1>All products</h1>
-      {/* <ul className={styles.productsList}>
-        {products.map((product) => (
-          <Link to={`/products/${product.id}`}>
-            <div key={product.id} className={styles.productsDiv}>
-              <img src={product.image} alt={product.name} />
-              <li key={product.id}>
-                {product.name} - {product.price} SEK{" "}
-              </li>
-            </div>
-          </Link>
-        ))}
-      </ul> */}
+
       <GridList products={products} />
     </div>
   );

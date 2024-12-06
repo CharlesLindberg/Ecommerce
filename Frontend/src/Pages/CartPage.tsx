@@ -5,6 +5,7 @@ import { removeFromCart, addToCart } from "../redux/slices/cartSlice";
 import { removeFromCartAPI } from "../Utilities/LoadCart";
 import { loadCartItems } from "../Utilities/LoadCart";
 import { clearCart } from "../redux/slices/cartSlice";
+import styles from "./CartPage.module.css";
 
 const CartPage = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -21,7 +22,7 @@ const CartPage = () => {
         const items = await loadCartItems(); // hämta cart från backend
         console.log("Items fetched from API:", items);
 
-        items.forEach((item) => {
+        items.forEach((item, index) => {
           dispatch(addToCart(item)); // Lägg till varje objekt i redux store
           console.log(
             `Adding item to Redux Store, iteration ${index + 1}:`,
@@ -53,27 +54,34 @@ const CartPage = () => {
     }
   };
 
-  console.log("Rendering cartItems:", cartItems);
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
 
   return (
-    <div>
-      <h1>Your cart</h1>
+    <>
+      <div className={styles.container}>
+        <h1 className={styles.title}>Your cart</h1>
 
-      {cartItems.length === 0 ? (
-        <p>Your cart is empty</p>
-      ) : (
-        <ul>
-          {cartItems.map((item) => (
-            <li key={item.id}>
-              <p>{item.name}</p>
-              <p>{item.price} SEK</p>
-              <p>Quantity: {item.quantity}</p>
-              <button onClick={() => handleRemove(item.id)}>Remove</button>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+        {cartItems.length === 0 ? (
+          <p>Your cart is empty</p>
+        ) : (
+          <ul className={styles.cartList}>
+            {cartItems.map((item) => (
+              <li key={item.id} className={styles.cartItem}>
+                <img src={item.image} alt={item.name} />
+                <p>{item.name}</p>
+                <p>{item.price} SEK</p>
+                <p>Quantity: {item.quantity}</p>
+                <button onClick={() => handleRemove(item.id)}>Remove</button>
+              </li>
+            ))}
+            <div className={styles.totalPrice}>Total: {totalPrice} SEK</div>
+          </ul>
+        )}
+      </div>
+    </>
   );
 };
 

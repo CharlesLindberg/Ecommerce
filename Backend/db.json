@@ -163,12 +163,28 @@
   ],
   "cart": [
     {
-      "id": 6,
-      "name": "Julkula",
-      "price": 29,
-      "description": "En röd och glittrig julkula.",
-      "image": "/images/julkula.webp",
-      "quantity": 4
+      "id": 3,
+      "name": "Julstjärna",
+      "price": 149,
+      "description": "En klassisk julstjärna att hänga i fönstret.",
+      "image": "/images/julstjarna.webp",
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "name": "Ljusslinga",
+      "price": 99,
+      "description": "En vacker ljusslinga som lyser upp vilket rum som helst.",
+      "image": "/images/ljusslinga.webp",
+      "quantity": 1
+    },
+    {
+      "id": 5,
+      "name": "Julpynt",
+      "price": 79,
+      "description": "Ett set med julpynt för att dekorera ditt hem.",
+      "image": "/images/julpynt.webp",
+      "quantity": 2
     }
   ]
 }

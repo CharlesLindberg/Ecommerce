@@ -28,6 +28,14 @@ const Header = () => {
                 Products
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/cart"
+                className={({ isActive }) => (isActive ? styles.active : "")}
+              >
+                Cart
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </header>

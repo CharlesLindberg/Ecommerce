@@ -7,7 +7,7 @@ const GridList = ({ products }: { products: IProduct[] }) => {
   return (
     <section className={styles.grid} data-testid="prod-section">
       {products.map((product) => (
-        <Link to={`/products/${product.id} key={product.id}`}>
+        <Link to={`/products/${product.id}`} key={product.id}>
           <ProductItem key={product.id} product={product} />
         </Link>
       ))}
