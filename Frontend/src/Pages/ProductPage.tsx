@@ -61,7 +61,7 @@ const ProductPage = () => {
         <h1>{product.name}</h1>
         <img src={product.image} alt={product.name} />
       </div>
-      <div className={styles.infoConteiner}>
+      <div className={styles.infoContainer}>
         <p>{product.description}</p>
         <p>Pris: {product.price} SEK</p>
         <p>Lagerstatus: {product.stock} /st</p>
