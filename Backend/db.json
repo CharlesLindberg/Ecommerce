@@ -163,20 +163,28 @@
   ],
   "cart": [
     {
-      "id": 2,
-      "name": "Ljusslinga",
-      "price": 99,
-      "description": "En vacker ljusslinga som lyser upp vilket rum som helst.",
-      "image": "/images/ljusslinga.webp",
+      "id": 7,
+      "name": "Tomtefigur",
+      "price": 249,
+      "description": "En handgjord tomtefigur att ställa fram till jul.",
+      "image": "/images/tomtefigur.webp",
       "quantity": 1
     },
     {
-      "id": 1,
-      "name": "Julgran",
-      "price": 299,
-      "description": "En stor konstgjord julgran som är perfekt för hemmets alla juldekorationer.",
-      "image": "/images/julgran.webp",
-      "quantity": 3
+      "id": 10,
+      "name": "Glöggmuggar",
+      "price": 159,
+      "description": "Fyra glöggmuggar med julmotiv.",
+      "image": "/images/gloggmuggar.webp",
+      "quantity": 1
+    },
+    {
+      "id": 3,
+      "name": "Julstjärna",
+      "price": 149,
+      "description": "En klassisk julstjärna att hänga i fönstret.",
+      "image": "/images/julstjarna.webp",
+      "quantity": 1
     }
   ]
 }
