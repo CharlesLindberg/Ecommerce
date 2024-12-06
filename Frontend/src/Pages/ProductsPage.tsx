@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import { LoadProducts } from "../Utilities/LoadProducts";
 import { IProduct } from "../models/IProduct";
 import { useState } from "react";
-import styles from "./ProductsPage.module.css";
-import { Link } from "react-router-dom";
 import GridList from "../Components/GridList";
 
 const ProductsPage = () => {

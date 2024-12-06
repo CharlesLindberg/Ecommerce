@@ -163,28 +163,12 @@
   ],
   "cart": [
     {
-      "id": 7,
-      "name": "Tomtefigur",
-      "price": 249,
-      "description": "En handgjord tomtefigur att ställa fram till jul.",
-      "image": "/images/tomtefigur.webp",
-      "quantity": 1
-    },
-    {
-      "id": 10,
-      "name": "Glöggmuggar",
-      "price": 159,
-      "description": "Fyra glöggmuggar med julmotiv.",
-      "image": "/images/gloggmuggar.webp",
-      "quantity": 1
-    },
-    {
       "id": 3,
       "name": "Julstjärna",
       "price": 149,
       "description": "En klassisk julstjärna att hänga i fönstret.",
       "image": "/images/julstjarna.webp",
-      "quantity": 1
+      "quantity": 3
     }
   ]
 }

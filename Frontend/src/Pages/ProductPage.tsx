@@ -39,10 +39,8 @@ const ProductPage = () => {
 
       try {
         await addToCartAPI(cartItem); // POST-req till backend
-        console.log("Product successfully added to backend!");
-
         dispatch(addToCart(cartItem)); // Dispatcha Redux-action
-        console.log("Product added to Redux Store:", cartItem);
+       
       } catch (error) {
         console.error("Failed to add product to cart", error);
       }

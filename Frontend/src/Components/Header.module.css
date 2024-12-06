@@ -12,14 +12,14 @@
 }
 
 .logoContainer img {
-  max-height: 100px; /* Anpassa loggans storlek */
+  max-height: 130px;
   width: auto;
   border-radius: 100%;
 }
 
 .nav {
-  display: flex; /* Gör menyn horisontell */
-  gap: 1.5rem; /* Mellanrum mellan länkarna */
+  display: flex;
+  gap: 1.5rem;
 }
 
 .nav a {
@@ -34,25 +34,25 @@
 }
 
 .navList {
-  display: flex; /* Gör listan horisontell */
-  gap: 1.5rem; /* Mellanrum mellan listobjekten */
-  list-style-type: none; /* Ta bort punkterna framför <li> */
+  display: flex;
+  gap: 1.5rem;
+  list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
 .navLink {
-  text-decoration: none; /* Ta bort understrykning */
-  color: #333; /* Standardfärg */
-  font-weight: bold; /* Gör texten lite tjockare */
-  transition: color 0.3s ease; /* Lägg till lite hover-effekt */
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .navLink:hover {
-  color: #606060; /* Färg på hover */
+  color: #606060;
 }
 
 .navLink.active {
-  color: #2c2c2c; /* Färg för den aktiva länken */
-  text-decoration: underline; /* Understrykning för den aktiva länken */
+  color: #2c2c2c;
+  text-decoration: underline;
 }

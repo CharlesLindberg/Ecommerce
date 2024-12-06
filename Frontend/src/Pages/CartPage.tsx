@@ -18,19 +18,11 @@ const CartPage = () => {
     const fetchCartItems = async () => {
       try {
         dispatch(clearCart()); // Töm rexus store innan jag hämtar data från api
-
         const items = await loadCartItems(); // hämta cart från backend
-        console.log("Items fetched from API:", items);
 
-        items.forEach((item, index) => {
+        items.forEach((item) => {
           dispatch(addToCart(item)); // Lägg till varje objekt i redux store
-          console.log(
-            `Adding item to Redux Store, iteration ${index + 1}:`,
-            item
-          );
         });
-
-        console.log("Redux Store after dispatching items:", cartItems);
       } catch (error) {
         console.error("failed to load cart Items: ", error);
       }
@@ -38,20 +30,15 @@ const CartPage = () => {
     fetchCartItems();
   }, [dispatch]);
 
-  useEffect(() => {
-    console.log("cartItems updated in useSelector:", cartItems);
-  }, [cartItems]);
+  useEffect(() => {}, [cartItems]);
 
   const handleRemove = async (id: number) => {
     console.log("Removing item with id:", id);
 
     try {
       await removeFromCartAPI(id); // delete req till backend
-      console.log("Removing item with id from Redux", id);
       dispatch(removeFromCart(id)); //Uppdatera redux store
-    } catch (error) {
-      console.error("Failed to remove item from cart", error);
-    }
+    } catch (error) {}
   };
 
   const totalPrice = cartItems.reduce(
