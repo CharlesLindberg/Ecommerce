@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ICartItem } from "../../models/ICartItem";
 
 interface CartState {
@@ -14,7 +14,7 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<ICartItem>) => {
-      console.log("Adding item to Redux Store:", action.payload);
+      console.log("Reducer running, adding item to state:", action.payload);
       const existingItem = state.items.find(
         (item) => item.id === action.payload.id
       );
@@ -23,13 +23,14 @@ const cartSlice = createSlice({
       } else {
         state.items.push(action.payload);
       }
-      console.log("Redux Store after adding item:", state.items);
+      console.log("State after addToCart in reducer:", state.items);
     },
     removeFromCart: (state, action: PayloadAction<number>) => {
       console.log("Removing item with id from Redux:", action.payload);
       state.items = state.items.filter((item) => item.id !== action.payload);
     },
     clearCart: (state) => {
+      console.log("Clearing Redux Store...");
       state.items = [];
     },
   },

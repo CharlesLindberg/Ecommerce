@@ -163,12 +163,12 @@
   ],
   "cart": [
     {
-      "id": 19,
-      "name": "Pepparkakor",
-      "price": 39,
-      "description": "En burk med traditionella pepparkakor.",
-      "image": "/images/pepparkakor.webp",
-      "quantity": 2
+      "id": 6,
+      "name": "Julkula",
+      "price": 29,
+      "description": "En röd och glittrig julkula.",
+      "image": "/images/julkula.webp",
+      "quantity": 4
     }
   ]
 }

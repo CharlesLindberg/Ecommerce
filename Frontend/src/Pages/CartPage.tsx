@@ -4,6 +4,7 @@ import { RootState } from "../redux/store";
 import { removeFromCart, addToCart } from "../redux/slices/cartSlice";
 import { removeFromCartAPI } from "../Utilities/LoadCart";
 import { loadCartItems } from "../Utilities/LoadCart";
+import { clearCart } from "../redux/slices/cartSlice";
 
 const CartPage = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -15,18 +16,30 @@ const CartPage = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const items = await loadCartItems();
-        console.log("Items fetched from API:", items); // Kontrollera backend-data här
+        dispatch(clearCart()); // Töm rexus store innan jag hämtar data från api
+
+        const items = await loadCartItems(); // hämta cart från backend
+        console.log("Items fetched from API:", items);
 
         items.forEach((item) => {
           dispatch(addToCart(item)); // Lägg till varje objekt i redux store
+          console.log(
+            `Adding item to Redux Store, iteration ${index + 1}:`,
+            item
+          );
         });
+
+        console.log("Redux Store after dispatching items:", cartItems);
       } catch (error) {
         console.error("failed to load cart Items: ", error);
       }
     };
     fetchCartItems();
   }, [dispatch]);
+
+  useEffect(() => {
+    console.log("cartItems updated in useSelector:", cartItems);
+  }, [cartItems]);
 
   const handleRemove = async (id: number) => {
     console.log("Removing item with id:", id);
@@ -40,9 +53,12 @@ const CartPage = () => {
     }
   };
 
+  console.log("Rendering cartItems:", cartItems);
+
   return (
     <div>
       <h1>Your cart</h1>
+
       {cartItems.length === 0 ? (
         <p>Your cart is empty</p>
       ) : (

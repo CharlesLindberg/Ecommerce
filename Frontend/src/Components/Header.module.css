@@ -1,10 +1,14 @@
 .header {
   display: flex;
-  justify-content: space-between; /* Logga till vänster, meny till höger */
+  justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem; /* Lite padding för snyggare layout */
-  background-color: #f5f5f5; /* Valfri bakgrundsfärg */
-  border-bottom: 1px solid #ddd; /* Separera header från innehåll */
+  padding: 1rem 2rem;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .logoContainer img {
