@@ -6,9 +6,10 @@ import {
   faCartArrowDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 const Header = () => {
-  const cartItems = useSelector((state) => state.cart.items);
+  const cartItems = useSelector((state: RootState) => state.cart.items);
   const hasItems = cartItems.length > 0;
 
   return (
