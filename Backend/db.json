@@ -163,12 +163,12 @@
   ],
   "cart": [
     {
-      "id": 3,
-      "name": "Julstjärna",
-      "price": 149,
-      "description": "En klassisk julstjärna att hänga i fönstret.",
-      "image": "/images/julstjarna.webp",
-      "quantity": 3
+      "id": 1,
+      "name": "Julgran",
+      "price": 299,
+      "description": "En stor konstgjord julgran som är perfekt för hemmets alla juldekorationer.",
+      "image": "/images/julgran.webp",
+      "quantity": 1
     }
   ]
 }
