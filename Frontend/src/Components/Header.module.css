@@ -56,3 +56,7 @@
   color: #2c2c2c;
   text-decoration: underline;
 }
+
+.cartLink :hover {
+  border-bottom: none !important;
+}

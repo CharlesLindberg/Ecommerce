@@ -38,7 +38,7 @@ const Header = () => {
                 Products
               </NavLink>
             </li>
-            <li>
+            <li className={styles.cartLink}>
               <NavLink
                 to="/cart"
                 className={({ isActive }) => (isActive ? styles.active : "")}
